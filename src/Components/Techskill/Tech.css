@@ -1,0 +1,79 @@
+.tech {
+    padding: 2rem;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1024px;
+    margin: 20px auto;
+}
+
+.tech-header {
+    margin-bottom: 2rem;
+}
+.tech-header h1{
+    color: #607d8b ;
+}
+
+.tech-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+}
+
+.tech-skill-container {
+    transform-origin: top center;
+    transform: rotate(-90deg) translateY(-200%);
+    transition: opacity 0.5s ease, transform 1s ease;
+    animation: hang 2s ease-out forwards;
+    animation-delay: calc(var(--delay) * 0.2s);
+}
+
+@keyframes hang {
+    0% {
+        opacity: 0;
+        transform: rotate(-90deg) translateY(-200%);
+    }
+    50% {
+        opacity: 1;
+        transform: rotate(10deg) translateY(0%);
+    }
+    70% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.tech-skill-container img {
+    width: 150px;
+    height: 150px;
+    transition: transform 1s ease-in-out;
+}
+
+.tech-skill-container:hover img {
+    animation: swing 0.2s ease-in infinite alternate;
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+@media(max-width:379px){
+    .tech-container {
+        grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+    }
+}
+
+@media(max-width:450px){
+    .tech-skill-container img{
+        width: 120px;
+        height: 120px;
+    }
+}

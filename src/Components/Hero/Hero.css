@@ -1,0 +1,150 @@
+.hero {
+    position: relative;
+    width: 100%;
+    max-width: 1024px;
+    margin: 10% auto;
+}
+
+.hero-container{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-wrap: wrap;
+   padding: 15px;
+}
+
+.hero-content-text {
+    display: flex;
+    align-items: center;
+}
+
+.hero-content p{
+    font-size: 18px;
+    width: 100%;
+    max-width: 35em;
+}
+
+.hero-content-text img {
+    width: 50px;
+    height: 50px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+/* Keyframes for bouncing animation */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: rotate(0deg) translateY(0) scale(1);
+    }
+
+    25% {
+        transform: rotate(15deg) translateY(-5px) scale(1.1);
+    }
+
+    50% {
+        transform: rotate(-15deg) translateY(-10px) scale(1.2);
+    }
+
+    75% {
+        transform: rotate(15deg) translateY(-5px) scale(1.1);
+    }
+}
+
+.hero-content-second-color {
+    position: absolute;
+    left: auto;
+    top: -80px;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 60%;
+    height: auto;
+    max-width: 50%;
+    min-width: 46%;
+    border-bottom-left-radius: 10px;
+    background-color: #f0f4f6;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    color:#607d8b;
+}
+
+.hero-content h1 span{
+    color:#0055ff;
+}
+
+.social-link img{
+    margin-top: 1rem;
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.hero-img {
+    position: relative;
+    width: 300px;
+    height: 360px;
+    margin-top: -50px; 
+  }
+  
+  .hero-img-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 50% 70% 90%;
+    border: 1px solid #999;
+    overflow: hidden;
+    position: relative;
+    animation:  moveimage 8s ease-in-out infinite;
+    transition: all 1s ease-in-out;
+  }
+
+  @keyframes moveimage{
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+  }
+  
+  .hero-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+
+@media(max-width:750px){
+    .hero-container{
+        flex-direction: column-reverse;
+    }
+    .hero-img-container{
+        margin-top: 15px;
+    }
+    br{
+        display: none;
+    }
+    .hero-content h1{
+        font-size: 2.0rem;
+    }
+}
+
+@media(max-width:760px){
+    .hero-img{
+        margin-top: 35px;
+    }
+    br{
+        display: none;
+    }
+    .hero-content h1{
+        font-size: 2.0rem;
+    }
+}
